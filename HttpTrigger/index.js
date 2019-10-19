@@ -42,9 +42,9 @@ const uploadBuffer = async (containerName, blobName, buffer) => {
   });
 };
 
-const uriBase = 'https://eastus2.api.cognitive.microsoft.com/';
+const uriBase = process.env['COGNITIVE_SERVICES_URI']; //'https://eastus2.api.cognitive.microsoft.com/';
 const subscriptionKey = process.env['COGNITIVE_SERVICES_KEY'];
-const personGroupId = "stappy";
+const personGroupId = process.env['PERSON_GROUP_ID']; //"stappy";
 
 const detectFace = async (imageUrl) => {
   const params = {
